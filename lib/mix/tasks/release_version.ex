@@ -321,7 +321,7 @@ defmodule Mix.Tasks.Release.Version do
   @doc "Gets the current number of commits across all branches"
   @spec get_commit_count() :: String.t
   def get_commit_count() do
-    System.cmd( "git", ["rev-list", "--all", "--count"]) |> elem(0) |> String.rstrip
+    System.cmd( "git", ["rev-list", "HEAD", "--count"]) |> elem(0) |> String.rstrip
   end
 
   @doc "Gets the current number of commits in the current branch"
